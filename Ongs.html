@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PetGran - Perfil da ONG</title>
+    <meta name="description" content="Conheça as ONGs parceiras do PetGran e adote um pet. Encontre animais para adoção responsável.">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#346574",
+                        "on-surface-variant": "#40484b",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed-dim": "#9dcee0",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#3d6751",
+                        "on-secondary-container": "#436d57",
+                        "surface-container": "#edeeef",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed": "#b9eafd",
+                        "outline-variant": "#c0c8cb",
+                        "on-background": "#191c1d",
+                        "tertiary-container": "#fac69f",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9fa",
+                        "on-primary-fixed": "#001f28",
+                        "secondary-fixed-dim": "#a4d1b6",
+                        "inverse-surface": "#2e3132",
+                        "outline": "#71787c",
+                        "secondary-fixed": "#bfedd1",
+                        "on-secondary-fixed-variant": "#254f3a",
+                        "primary-container": "#a7d8ea",
+                        "tertiary-fixed-dim": "#efbc96",
+                        "on-tertiary-fixed-variant": "#623f22",
+                        "tertiary-fixed": "#ffdcc3",
+                        "inverse-primary": "#9dcee0",
+                        "on-primary-fixed-variant": "#184d5c",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#765132",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#2e5f6f",
+                        "surface-tint": "#346574",
+                        "secondary-container": "#bfedd1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#2f1500",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dadb",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#7c5637",
+                        "on-secondary-fixed": "#002113"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "16px",
+                        "md": "24px",
+                        "margin-mobile": "20px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "40px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased h-screen overflow-hidden flex flex-col md:flex-row">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden lg:flex flex-col fixed left-0 top-0 h-screen py-lg border-r border-outline-variant bg-surface-container-low shadow-sm w-64 rounded-r-lg z-40">
+    <div class="px-md mb-8">
+        <h1 class="font-headline-md text-headline-md font-bold text-primary">PetGran</h1>
+        <p class="font-label-md text-label-md text-on-surface-variant">Rede Comunitária</p>
+    </div>
+    <div class="flex-1 px-sm space-y-2">
+        <a class="flex items-center gap-sm text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-full transition-all" href="feed.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-label-md text-label-md">Início</span>
+        </a>
+        <a class="flex items-center gap-sm bg-primary-container text-on-primary-container rounded-full px-md py-sm scale-95 active:scale-90 transition-transform" href="Ongs.html">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+            <span class="font-label-md text-label-md font-bold">Explorar ONGs</span>
+        </a>
+        <a class="flex items-center gap-sm text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-full transition-all" href="marketplace.html">
+            <span class="material-symbols-outlined">storefront</span>
+            <span class="font-label-md text-label-md">Marketplace</span>
+        </a>
+        <a class="flex items-center gap-sm text-on-surface-variant px-md py-sm hover:bg-surface-container-highest rounded-full transition-all" href="mensagens.html">
+            <span class="material-symbols-outlined">chat</span>
+            <span class="font-label-md text-label-md">Mensagens</span>
+        </a>
+    </div>
+    <div class="px-md mt-auto">
+        <button type="button" data-action="donate-pix" data-ong-name="PetGran"
+                class="w-full bg-primary text-on-primary font-label-md text-label-md py-sm rounded-full shadow-sm hover:bg-primary/90 transition-colors">
+            Doe Agora
+        </button>
+    </div>
+</nav>
+<!-- TopNavBar (Mobile) -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base bg-surface border-b border-outline-variant shadow-sm lg:hidden">
+    <h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">PetGran</h1>
+    <div class="flex items-center gap-sm">
+        <a href="mensagens.html" class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors scale-95 active:scale-90 transition-transform">
+            <span class="material-symbols-outlined">chat</span>
+        </a>
+        <!-- DB: campo usuario.avatar_url -->
+        <img alt="Foto de perfil" class="w-8 h-8 rounded-full border border-outline-variant"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGlF4RdUCJawcC4LEyP8AH7EyKLXdyyNUk8AmhbYHun0Nxs8SR-RuBHZPYEk0s4wLgtktxrpIdMFoOVpE44LuqB2cOZWjEEVZE0q6SYhjPV9HzE1iz8tCJyzl7LmmYLceblG5LcD1BmIaIDbi223lskqy7nv_rgm7_HLhmpytYmZlxjTrvjMBsDnRKPYF16_9YdW8sTv__xp99ntEIjAzt0AxD3dCWRZb9zPyNNNmTHXInuIWjBvnewOWMOW53KSP4a3h6MPGNr-4n"/>
+    </div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 w-full lg:ml-64 mt-[64px] lg:mt-0 overflow-y-auto pb-24 lg:pb-0" data-ong-id="1">
+    <div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-lg space-y-xl">
+        <!-- NGO Header -->
+        <section class="relative bg-surface-container-lowest rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-outline-variant/30">
+            <!-- DB: campo ong.capa_url -->
+            <div class="h-48 md:h-64 w-full bg-surface-container relative">
+                <img alt="Capa da ONG Amigos de Patas" class="w-full h-full object-cover"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6-5GofTaeVp3UTBFRfTOi6vFDaWHZMQCglgkhi2LyrpuDpB_hM-U5jit7UQDBc3D71z1SMTVIz9pJPnKQslzqQuc2n5WME5xNectuYjj41Q4NLJgQD6XWXkQxIXrlUPePiW9Bjzg0Uo3ZRfiHN7N71Gwmc2Ep5xwg_HKd1cgrJDPpB8yOGzhHYn7IlUwbYjMzF9zU_qcbhqxIUe_sg_HpIAPVbkdm0wSvkCCjlvMvm6tGHwWjpY4N-_vRKteIS9FuyuMSaZD52sgS"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+            <div class="px-md pb-md relative z-10 flex flex-col items-center text-center -mt-16 md:-mt-20">
+                <!-- DB: campo ong.logo_url -->
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-surface-container-lowest bg-white overflow-hidden shadow-sm mb-4">
+                    <img alt="Logo Amigos de Patas" class="w-full h-full object-cover"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8LXjEzbtfuENbmpEr-oEWOq5ov_dTDbHcg1Di-AgkYGZS4BeHDxwmSEjgKleNZpXqHv5f0ejNGP_klw8GuHEOiM12CI2AQWDyi8h99OHo3D8tKIKa1Gv4bLkFDW71Hb7u6OAxe-z7XueVGE2zkTV3Nq4Kxim4ibj9dQlNcZ18yIiJtipyFmp_MOgYqwdsXyuTZzUADkNcQz3LmNZ24uIbG_isDlNNp7-DT2yw5wBWk8iYEoSfJV8OOQgszDNboJ04Ok-3ZR29-PT"/>
+                </div>
+                <!-- DB: campo ong.nome -->
+                <h2 class="font-headline-xl text-headline-xl text-on-surface mb-2">Amigos de Patas</h2>
+                <!-- DB: campo ong.descricao -->
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-6">
+                    Dedicados a resgatar, reabilitar e encontrar lares amorosos para animais abandonados em São Paulo. Juntos, fazemos a diferença na vida de cada peludo.
+                </p>
+                <button type="button" data-action="donate-pix" data-ong-name="Amigos de Patas" data-ong-id="1"
+                        class="bg-primary-container text-on-primary-container font-label-md text-label-md px-8 py-4 rounded-full shadow-sm hover:bg-primary-fixed transition-colors flex items-center gap-2 scale-95 active:scale-90">
+                    <span class="material-symbols-outlined">favorite</span>
+                    Fazer Doação (PIX)
+                </button>
+            </div>
+        </section>
+        <!-- Adoption Grid -->
+        <section>
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="font-headline-md text-headline-md text-on-surface">Amigos para Adotar</h3>
+                <!-- DB: campo ong.total_pets_disponiveis -->
+                <span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-low px-4 py-2 rounded-full">12 Disponíveis</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+                <!-- Pet Card 1 — DB: tabela pets -->
+                <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-outline-variant/20 hover:shadow-[0_8px_30px_rgb(52,101,116,0.08)] transition-all duration-300 group flex flex-col h-full"
+                     data-pet-id="1">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- DB: campo pet.imagem_url -->
+                        <img alt="Bolinha olhando para cima" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNnSSfU4M9_x7nVlVHznGWhsmMZTrGx0Mll3hmrIL_nACzZIZiuJvRE4cMdR22pME9C1pxC5XgNWEDyUr85qbcIWPPUwQQhpJrMMh365kiesb3gLtFFMrzkvZGN7jx0qk6qj4b4zbCJ7xXMBLnzIi4gYqnL2IWS_EgG5MsX1ZgAlPJ9t7kgENqBYTanK-XF4VDr1eHdg2lTlRqaZzZ42ST3GAwQWZ23K0ylDhP0rmgGtnQy3AXqFJU-rVU8vH_cGLOJv8fMuBPeHjU"/>
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <!-- DB: campo pet.especie -->
+                            <span class="bg-secondary-container text-on-secondary-container font-label-md text-[12px] px-3 py-1 rounded-full shadow-sm">Cão</span>
+                            <!-- DB: campo pet.sexo -->
+                            <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-md text-[12px] px-3 py-1 rounded-full shadow-sm">Macho</span>
+                        </div>
+                    </div>
+                    <div class="p-sm flex flex-col flex-grow">
+                        <!-- DB: campo pet.nome -->
+                        <h4 class="font-headline-md text-[20px] font-bold text-on-surface mb-1">Bolinha</h4>
+                        <!-- DB: campos pet.idade, pet.porte, pet.temperamento -->
+                        <p class="font-body-md text-[14px] text-on-surface-variant mb-4">2 anos • Porte Médio • Muito dócil</p>
+                        <div class="mt-auto">
+                            <button type="button" data-action="adopt" data-pet-id="1" data-pet-name="Bolinha"
+                                    class="w-full bg-surface-container-high text-primary font-label-md text-label-md py-3 rounded-full hover:bg-primary hover:text-white transition-colors border border-transparent hover:border-primary">
+                                Quero Adotar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pet Card 2 -->
+                <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-outline-variant/20 hover:shadow-[0_8px_30px_rgb(52,101,116,0.08)] transition-all duration-300 group flex flex-col h-full"
+                     data-pet-id="2">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Luna, gata curiosa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA32nBXRI3QpDYD2NXTFszEntHCSdjk2FgCZBi0auz-uQ6v9Cfw5Y60qUgwxtGluXtF7Oy6IqoqmHcWA-1aYR6UlONdIupTDTZIDVyTD8vzpUdjWe2Q4tQuoKwdnTpGytWoQE_ADczLIh8ycxNJgaY48iP8vvfBu34DMsk7-y47OuutkuCr4gCmyvowdFUYUIm8TFTUlnpXh3lXxTgfBKEUTKtXz9HuiVAO2j7J1xO9wcyjis1WCR1sCurpaCNDDgtQLQXiwRfWv2D"/>
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-tertiary-container text-on-tertiary-container font-label-md text-[12px] px-3 py-1 rounded-full shadow-sm">Gato</span>
+                            <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-md text-[12px] px-3 py-1 rounded-full shadow-sm">Fêmea</span>
+                        </div>
+                    </div>
+                    <div class="p-sm flex flex-col flex-grow">
+                        <h4 class="font-headline-md text-[20px] font-bold text-on-surface mb-1">Luna</h4>
+                        <p class="font-body-md text-[14px] text-on-surface-variant mb-4">1 ano • Castrada • Brincalhona</p>
+                        <div class="mt-auto">
+                            <button type="button" data-action="adopt" data-pet-id="2" data-pet-name="Luna"
+                                    class="w-full bg-surface-container-high text-primary font-label-md text-label-md py-3 rounded-full hover:bg-primary hover:text-white transition-colors border border-transparent hover:border-primary">
+                                Quero Adotar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pet Card 3 -->
+                <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-outline-variant/20 hover:shadow-[0_8px_30px_rgb(52,101,116,0.08)] transition-all duration-300 group flex flex-col h-full"
+                     data-pet-id="3">
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="Thor, filhote dormindo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPqxie8amaQ1mYTaPSW7KZ5ED1uOfi75PFh4tyF8HT94zRaCayUH0ECEtbVquDIo14rWclqAiLfjAubiFLBq9vfxX1ZtUEEnGmBtYu0cTIL3LyCMGOtZULftYgl-GYkkh0pBHnuFBXO5OZwL4aNKGVOrhAWfhw6QXhRQbc5IquKFKpnesKctBSPAcWAitSkX-vKSmgbo8azHZugwprWXYnwLHSOZjKRBCaB-eXxRPxho_s6McuuvAaI4C3UYUjK1tpLJEjq3CGgjrm"/>
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="bg-secondary-container text-on-secondary-container font-label-md text-[12px] px-3 py-1 rounded-full shadow-sm">Cão</span>
+                            <span class="bg-surface/90 backdrop-blur-sm text-on-surface font-label-md text-[12px] px-3 py-1 rounded-full shadow-sm">Macho</span>
+                        </div>
+                    </div>
+                    <div class="p-sm flex flex-col flex-grow">
+                        <h4 class="font-headline-md text-[20px] font-bold text-on-surface mb-1">Thor</h4>
+                        <p class="font-body-md text-[14px] text-on-surface-variant mb-4">3 meses • Filhote • Precisa de espaço</p>
+                        <div class="mt-auto">
+                            <button type="button" data-action="adopt" data-pet-id="3" data-pet-name="Thor"
+                                    class="w-full bg-surface-container-high text-primary font-label-md text-label-md py-3 rounded-full hover:bg-primary hover:text-white transition-colors border border-transparent hover:border-primary">
+                                Quero Adotar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface/80 backdrop-blur-md shadow-[0_-4px_10px_rgba(0,0,0,0.05)] rounded-t-lg">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 scale-95 transition-transform duration-200" href="feed.html">
+        <span class="material-symbols-outlined">dynamic_feed</span>
+        <span class="font-label-md text-label-md text-[10px]">Feed</span>
+    </a>
+    <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl p-2 scale-95 transition-transform duration-200" href="Ongs.html">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pets</span>
+        <span class="font-label-md text-label-md text-[10px] font-bold">ONGs</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 scale-95 transition-transform duration-200" href="marketplace.html">
+        <span class="material-symbols-outlined">shopping_bag</span>
+        <span class="font-label-md text-label-md text-[10px]">Loja</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant p-2 scale-95 transition-transform duration-200" href="mensagens.html">
+        <span class="material-symbols-outlined">chat_bubble</span>
+        <span class="font-label-md text-label-md text-[10px]">Chat</span>
+    </a>
+</nav>
+<script src="./petgran-ui.js"></script>
+</body>
+</html>

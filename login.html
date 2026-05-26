@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PetGran - Entrar</title>
+    <meta name="description" content="Faça login no PetGran — a rede social de adoção de pets. Conecte-se a ONGs, pet shops e adotantes.">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#346574",
+                        "on-surface-variant": "#40484b",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed-dim": "#9dcee0",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#3d6751",
+                        "on-secondary-container": "#436d57",
+                        "surface-container": "#edeeef",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed": "#b9eafd",
+                        "outline-variant": "#c0c8cb",
+                        "on-background": "#191c1d",
+                        "tertiary-container": "#fac69f",
+                        "on-error-container": "#93000a",
+                        "surface": "#f8f9fa",
+                        "on-primary-fixed": "#001f28",
+                        "secondary-fixed-dim": "#a4d1b6",
+                        "inverse-surface": "#2e3132",
+                        "outline": "#71787c",
+                        "secondary-fixed": "#bfedd1",
+                        "on-secondary-fixed-variant": "#254f3a",
+                        "primary-container": "#a7d8ea",
+                        "tertiary-fixed-dim": "#efbc96",
+                        "on-tertiary-fixed-variant": "#623f22",
+                        "tertiary-fixed": "#ffdcc3",
+                        "inverse-primary": "#9dcee0",
+                        "on-primary-fixed-variant": "#184d5c",
+                        "surface-bright": "#f8f9fa",
+                        "background": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#765132",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#2e5f6f",
+                        "surface-tint": "#346574",
+                        "secondary-container": "#bfedd1",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#2f1500",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dadb",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#7c5637",
+                        "on-secondary-fixed": "#002113"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "80px",
+                        "gutter": "16px",
+                        "md": "24px",
+                        "margin-mobile": "20px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "40px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .soft-shadow { box-shadow: 0 10px 40px -10px rgba(52, 101, 116, 0.1); }
+        .input-glow:focus { box-shadow: 0 0 0 4px rgba(185, 234, 253, 0.5); border-color: #346574; outline: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen overflow-hidden font-body-md">
+<!-- Main Container -->
+<div class="flex h-full w-full">
+    <!-- Left Image Section (Hidden on Mobile) -->
+    <div class="hidden lg:block lg:w-1/2 relative bg-surface-container-low overflow-hidden">
+        <!-- Decorative Background Elements -->
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-tertiary-container rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+        <!-- DB: campo imagem_banner_login -->
+        <img alt="Pets felizes em um gramado" class="absolute inset-0 w-full h-full object-cover rounded-r-xl"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQkH32XaiJv86HoXY6dup5Hg402_SyCyx8Vlg-rk2arR8rkPxihPc5RwTLEyTTW7mS-dIIEYuerr9kKjQMtcxylnPT_1zgzzzvbva9XkhKNZeybJ1Iw2EQgRtIPlbcm5gwNtxMMinEocLKrb4N_0Mx-RISs3lSpdBGXx5vZ9z2qGuxn66vZUklaom0E5_MEGfa3gaBm-1SPKvfogHjobRkwndQW1nXZOZtBszlO8SG2krPgfFerAHshFcJDI2CQdpID8US-cT9AiKA"/>
+        <!-- Overlay Text -->
+        <div class="absolute bottom-xl left-margin-desktop right-md p-md bg-surface/80 backdrop-blur-md rounded-xl soft-shadow">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Bem-vindo à comunidade.</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant">Conectando corações, salvando vidas. Junte-se a milhares de amantes de pets hoje mesmo.</p>
+        </div>
+    </div>
+    <!-- Right Form Section -->
+    <div class="w-full lg:w-1/2 flex flex-col justify-center items-center px-margin-mobile lg:px-margin-desktop py-xl overflow-y-auto bg-surface">
+        <div class="w-full max-w-[480px]">
+            <!-- Logo & Header -->
+            <div class="text-center mb-lg">
+                <!-- DB: campo logo_url -->
+                <img alt="PetGran Logo" class="h-24 w-auto mx-auto mb-md rounded-full shadow-sm"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJOoGQDJnYgUNIQCqvFBDn1GHN7vHVZkHXtXVC5kWymqZU6VLrBdEU-gFKPoro_I9nBOUeaGUM90fxqVcGgRksTHcgbWnuFD6R5wY0xGk-L1HR2tjt3QaHxsarM3mFi2rTOVj1up5_dqGssy-RNfqtTnG9pmDr_TBdtLxVuboDNGGnt-UnszNZKLgjK_iXAAw5qy_VuGbOwbj0kXA5sO8RnopcxqUS8aDKzO5HCfaW7cKwlOOEXCpKKFXxDhHkuV6SKGdIsiXwbTQj"/>
+                <h1 class="font-headline-xl text-headline-xl text-on-surface mb-xs">PetGran</h1>
+                <p class="font-body-md text-body-md text-outline">Faça login para continuar sua jornada.</p>
+            </div>
+            <!-- Profile Selection -->
+            <div class="mb-lg">
+                <p class="font-label-md text-label-md text-on-surface-variant mb-sm uppercase tracking-wide">Como você deseja entrar?</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-sm">
+                    <!-- Option 1: Tutor/Adotante (default selected) -->
+                    <button type="button" data-profile-type="tutor" data-selected="true"
+                            class="flex flex-col items-center justify-center p-md bg-primary-fixed text-on-primary-fixed-variant rounded-xl border-2 border-primary transition-all soft-shadow hover:bg-primary-container group relative overflow-hidden">
+                        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span class="material-symbols-outlined text-4xl mb-xs" style="font-variation-settings: 'FILL' 1;">person</span>
+                        <span class="font-label-md text-label-md text-center">Tutor / Adotante</span>
+                    </button>
+                    <!-- Option 2: ONG -->
+                    <button type="button" data-profile-type="ong"
+                            class="flex flex-col items-center justify-center p-md bg-surface-container-high text-on-surface-variant rounded-xl border-2 border-transparent hover:border-outline-variant transition-all hover:bg-surface-container-highest">
+                        <span class="material-symbols-outlined text-4xl mb-xs">volunteer_activism</span>
+                        <span class="font-label-md text-label-md text-center">ONG</span>
+                    </button>
+                    <!-- Option 3: Estabelecimento -->
+                    <button type="button" data-profile-type="estabelecimento"
+                            class="flex flex-col items-center justify-center p-md bg-surface-container-high text-on-surface-variant rounded-xl border-2 border-transparent hover:border-outline-variant transition-all hover:bg-surface-container-highest">
+                        <span class="material-symbols-outlined text-4xl mb-xs">storefront</span>
+                        <span class="font-label-md text-label-md text-center">Estabelecimento</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Login Form -->
+            <form id="loginForm" class="space-y-md" data-action="auth/login" method="POST">
+                <div>
+                    <label class="block font-label-md text-label-md text-on-surface mb-xs" for="email">E-mail</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-sm text-outline">
+                            <span class="material-symbols-outlined">mail</span>
+                        </span>
+                        <input class="w-full bg-surface-container-low border border-outline-variant text-on-surface rounded-xl pl-lg pr-sm py-sm font-body-md input-glow transition-all"
+                               id="email" name="email" placeholder="seu@email.com" type="email" required autocomplete="email"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-xs">
+                        <label class="block font-label-md text-label-md text-on-surface" for="password">Senha</label>
+                        <a class="font-label-md text-label-md text-primary hover:underline" href="#">Esqueceu a senha?</a>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-sm text-outline">
+                            <span class="material-symbols-outlined">lock</span>
+                        </span>
+                        <input class="w-full bg-surface-container-low border border-outline-variant text-on-surface rounded-xl pl-lg pr-lg py-sm font-body-md input-glow transition-all"
+                               id="password" name="password" placeholder="••••••••" type="password" required minlength="6" autocomplete="current-password"/>
+                        <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-sm text-outline hover:text-on-surface">
+                            <span class="material-symbols-outlined">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" id="btnLogin"
+                        class="w-full bg-primary text-on-primary font-headline-md text-headline-md py-sm rounded-full soft-shadow hover:bg-on-primary-container transition-colors transform active:scale-95 flex items-center justify-center gap-sm mt-lg">
+                    <span>Entrar</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </form>
+            <!-- Divider -->
+            <div class="flex items-center my-lg">
+                <div class="flex-grow border-t border-outline-variant"></div>
+                <span class="mx-md text-outline font-label-md text-label-md uppercase">ou continue com</span>
+                <div class="flex-grow border-t border-outline-variant"></div>
+            </div>
+            <!-- Social Login -->
+            <div class="flex justify-center gap-md">
+                <button type="button" class="p-sm bg-surface-container border border-outline-variant rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant flex items-center justify-center w-12 h-12" title="Entrar com Google">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">pets</span>
+                </button>
+                <button type="button" class="p-sm bg-surface-container border border-outline-variant rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant flex items-center justify-center w-12 h-12" title="Entrar com E-mail">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+                </button>
+            </div>
+            <!-- Sign up link -->
+            <p class="text-center mt-xl font-body-md text-body-md text-on-surface-variant">
+                Ainda não tem uma conta? <a class="font-label-md text-label-md text-primary font-bold hover:underline" href="#">Cadastre-se</a>
+            </p>
+        </div>
+    </div>
+</div>
+<script src="./petgran-ui.js"></script>
+</body>
+</html>

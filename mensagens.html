@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PetGran - Mensagens</title>
+    <meta name="description" content="Mensagens do PetGran — converse com ONGs, pet shops e outros tutores.">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#edeeef",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#2e5f6f",
+                        "inverse-primary": "#9dcee0",
+                        "tertiary-container": "#fac69f",
+                        "surface-tint": "#346574",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#40484b",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#346574",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary": "#3d6751",
+                        "outline": "#71787c",
+                        "on-primary-fixed-variant": "#184d5c",
+                        "secondary-fixed-dim": "#a4d1b6",
+                        "secondary-fixed": "#bfedd1",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#2f1500",
+                        "on-surface": "#191c1d",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary-fixed-variant": "#623f22",
+                        "on-background": "#191c1d",
+                        "primary-fixed": "#b9eafd",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c0c8cb",
+                        "on-primary-fixed": "#001f28",
+                        "on-secondary-container": "#436d57",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#efbc96",
+                        "primary-fixed-dim": "#9dcee0",
+                        "primary-container": "#a7d8ea",
+                        "secondary-container": "#bfedd1",
+                        "background": "#f8f9fa",
+                        "on-tertiary-container": "#765132",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#254f3a",
+                        "tertiary": "#7c5637",
+                        "surface": "#f8f9fa",
+                        "tertiary-fixed": "#ffdcc3",
+                        "on-secondary-fixed": "#002113",
+                        "surface-variant": "#e1e3e4",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-surface": "#2e3132",
+                        "inverse-on-surface": "#f0f1f2"
+                    },
+                    "borderRadius": { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    "spacing": { "margin-desktop": "80px", "md": "24px", "margin-mobile": "20px", "lg": "40px", "base": "8px", "xl": "64px", "xs": "4px", "sm": "12px", "gutter": "16px" },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined[data-weight="fill"] { font-variation-settings: 'FILL' 1; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: #c0c8cb; border-radius: 20px; }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen overflow-hidden flex flex-col font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 bg-surface border-b border-outline-variant">
+    <div class="flex items-center gap-sm">
+        <span class="font-headline-lg text-headline-lg text-primary">PetGran</span>
+    </div>
+    <!-- Search Bar -->
+    <div class="flex-1 max-w-md mx-md hidden md:block">
+        <div class="relative flex items-center w-full h-12 rounded-full focus-within:shadow-sm bg-surface-container overflow-hidden transition-all duration-300">
+            <div class="grid place-items-center h-full w-12 text-on-surface-variant">
+                <span class="material-symbols-outlined">search</span>
+            </div>
+            <input class="peer h-full w-full outline-none text-sm text-on-surface bg-transparent pr-2 focus:ring-0 border-none" id="searchMessages" placeholder="Buscar conversas..." type="text"/>
+        </div>
+    </div>
+    <div class="flex items-center gap-gutter">
+        <button type="button" aria-label="Notificações" class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant cursor-pointer active:scale-95">
+            <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button type="button" aria-label="Configurações" class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant cursor-pointer active:scale-95">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
+        <!-- DB: campo usuario.avatar_url -->
+        <div class="h-10 w-10 rounded-full overflow-hidden ml-2 cursor-pointer border border-outline-variant hover:border-primary transition-colors">
+            <img alt="Foto de perfil" class="h-full w-full object-cover"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjsJEJgolNtau0MEaMmIVfobRC9VJQ79isd-Hhb4GuHiuwrR6UP5KKKqb_5A2ZpECMjFO3sx2xU875alGfJWuIvzwF-ovOEzku7LH-jB8dFgg7BlSOQ2AGLsxUlvcoOOqew18X3IsC3L3L7DkCifuTSIuqxqygUyzpBpuESOL763ibl4lkGeqB4FY15HDZUCoovJe38maxglsFHgs_4R0vc1HHYkQnLpVXiUlixORgz8hngsACCBDoXGi3cs-ykuZSwxYdtuZSQp-8"/>
+        </div>
+    </div>
+</header>
+<div class="flex flex-1 pt-20 overflow-hidden">
+    <!-- SideNavBar -->
+    <nav class="hidden md:flex flex-col h-full border-r border-outline-variant p-md gap-sm bg-surface-container-lowest w-80 shrink-0 transition-transform duration-200 ease-in-out shadow-sm">
+        <div class="flex items-center gap-sm mb-lg">
+            <!-- DB: campo logo_url -->
+            <img alt="PetGran Logo" class="h-12 w-12 rounded-full object-cover border border-outline-variant"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGPk_Vp5sdE0yOectbTj2KiLAHIjD129wb_ry9EfV5rC0HX4snfqMpZ73ecSlaom98rVpYsDhzoaeR4zuwsG3MnMWPXsYsgtFA7HaIfDPdlsq3To1nkm5iith__iSPVRfxrlFVYo84qhWQ84lP0Gl6LxdAqPQhpsuXSQhknHSAtdugZ0t6P-h0lD7uBjO949Zc9tBNcjbwsOjt1SLPmHfz9R_PVHvtqlRYwnOZw4on2oEW6z5OslZ4-77lMNnr3CnSv5nLHPmZLc1K"/>
+            <div>
+                <h2 class="text-primary font-headline-md">Chats Ativos</h2>
+                <p class="text-on-surface-variant text-sm">Gerencie suas conversas</p>
+            </div>
+        </div>
+        <button type="button" class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md mb-md shadow-sm hover:shadow-md transition-all active:scale-95 flex justify-center items-center gap-2">
+            <span class="material-symbols-outlined text-sm">edit_square</span>
+            Nova Mensagem
+        </button>
+        <ul class="flex flex-col gap-xs flex-1">
+            <li>
+                <a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="feed.html">
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="font-label-md text-label-md">Início</span>
+                </a>
+            </li>
+            <li>
+                <a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="Ongs.html">
+                    <span class="material-symbols-outlined">pets</span>
+                    <span class="font-label-md text-label-md">Explorar ONGs</span>
+                </a>
+            </li>
+            <li>
+                <a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="marketplace.html">
+                    <span class="material-symbols-outlined">storefront</span>
+                    <span class="font-label-md text-label-md">Loja</span>
+                </a>
+            </li>
+            <li>
+                <a class="flex items-center gap-sm px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all" href="mensagens.html">
+                    <span class="material-symbols-outlined" data-weight="fill">chat</span>
+                    <span class="font-label-md text-label-md">Mensagens</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Content Area -->
+    <main class="flex-1 flex overflow-hidden bg-background">
+        <!-- Left Panel: Conversation List -->
+        <div class="w-full md:w-1/3 lg:w-96 border-r border-outline-variant bg-surface flex flex-col h-full shrink-0">
+            <div class="p-md border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+                <h2 class="font-headline-md text-headline-md text-on-surface">Recentes</h2>
+                <button type="button" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined">filter_list</span>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto">
+                <!-- Chat Item 1 (Active) — DB: tabela chats -->
+                <div class="flex items-center p-md cursor-pointer bg-primary-container/20 border-l-4 border-primary hover:bg-primary-container/30 transition-colors"
+                     data-chat-id="1">
+                    <div class="relative">
+                        <!-- DB: campo chat.contato.avatar_url -->
+                        <img alt="Amigos de Patas" class="h-14 w-14 rounded-full object-cover shadow-sm"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV6ClafOyKoD3Oz5jTsv0Stcxu_ckYugxzZPfUOag3Eg26WnfP7mgLeUFhJI6QKUIFuWTONTEiJD3e5O1T6B23kbrYNuqUMg_D5BTuBgbLZ2czK8i5CIdKzaKnvDpvBQsSv8OIhq7SNxE6eHFqpFJdJEzxog8q4NnmPvGvx8Nkl0rAMiinbS0nQjPvwXizMaanxCxNRUBbIK0ZsTVN90Koq-HYxnd3Os-oOaZPgmgayzj4HJ9n_gl48W4rycsGmBWigXuUmYddSRm_"/>
+                        <div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary border-2 border-surface rounded-full"></div>
+                    </div>
+                    <div class="ml-4 flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <!-- DB: campo chat.contato.nome -->
+                            <h3 class="font-label-md text-label-md text-on-surface truncate pr-2">Amigos de Patas</h3>
+                            <!-- DB: campo chat.ultima_mensagem.hora -->
+                            <span class="text-xs text-primary font-medium">10:42</span>
+                        </div>
+                        <!-- DB: campo chat.ultima_mensagem.texto -->
+                        <p class="text-sm text-on-surface-variant truncate">Olá! Vimos seu interesse na Luna...</p>
+                    </div>
+                    <!-- DB: campo chat.nao_lidas > 0 -->
+                    <div class="ml-2 w-2 h-2 bg-primary rounded-full"></div>
+                </div>
+                <!-- Chat Item 2 -->
+                <div class="flex items-center p-md cursor-pointer hover:bg-surface-container transition-colors border-l-4 border-transparent"
+                     data-chat-id="2">
+                    <div class="relative">
+                        <img alt="Pet Shop Amigo" class="h-14 w-14 rounded-full object-cover shadow-sm"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWxfVWsBDRG-nQJfcbth3po-YCUSdix3JitPfryEbUGVkMpiNdi_oKkI6QLxjAKtpR9Oa04r8yZx58Ss5ooU-yoPjUO_Ku9Sn2d29hlsbY-qzExwXVYkGdJqCF6ke1gWKGgDpxfc5b7NWu6YeSPCMdGesMGt6WgrMdrVU8wSir_qAUAwTF8SwLLhDHr7tMYumnnFWhAEgXvMOHqHODBURPt4sQULlz601BXjgN4MCCFMtRH_VZWkmy9e5hVsfwHFkm5gSIT2gpii1Y"/>
+                    </div>
+                    <div class="ml-4 flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-label-md text-label-md text-on-surface truncate pr-2">Pet Shop Amigo</h3>
+                            <span class="text-xs text-on-surface-variant">Ontem</span>
+                        </div>
+                        <p class="text-sm text-on-surface-variant truncate">Sua encomenda de ração chegou!</p>
+                    </div>
+                </div>
+                <!-- Chat Item 3 -->
+                <div class="flex items-center p-md cursor-pointer hover:bg-surface-container transition-colors border-l-4 border-transparent"
+                     data-chat-id="3">
+                    <div class="relative">
+                        <img alt="Alex River" class="h-14 w-14 rounded-full object-cover shadow-sm"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy09pl0tHvT07dUFAprMRy7-QSRJJUZUpOQaCRqWJkjBQUrkSsXRw6N7DzJa3agnOJHgB5zY_IBBOWyRNZuzyo2pbgg_a9YWhcAls4McKYAOs48rXGvCXs09FR7oB5MwP4ZSLU1G9Bnw6MJC5fwH6hg-tez00Zlpc3NaGzSn9dfUtPPz1ZkxFCHPfewNNZL-X4h4-UZAINqGKSvTLnx3UcnlHBwRcujj9Cx4cG0NekfOPrfICc_a_Ebi5zMn8njhtxZACZ_jBOlXKt"/>
+                    </div>
+                    <div class="ml-4 flex-1 min-w-0">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-label-md text-label-md text-on-surface truncate pr-2">Alex River</h3>
+                            <span class="text-xs text-on-surface-variant">Terça</span>
+                        </div>
+                        <p class="text-sm text-on-surface-variant truncate">Combinado para o passeio no parque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Panel: Active Chat Window -->
+        <div class="hidden md:flex flex-col flex-1 bg-surface-container-lowest h-full relative" data-active-chat-id="1">
+            <!-- Chat Header -->
+            <div class="flex justify-between items-center p-md border-b border-outline-variant bg-surface/80 backdrop-blur-sm sticky top-0 z-10">
+                <div class="flex items-center gap-sm">
+                    <!-- DB: campo chat.contato.avatar_url -->
+                    <img alt="Amigos de Patas" class="h-12 w-12 rounded-full object-cover shadow-sm"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHHC19lJt4U7kRrbfwnhyqqN_JIwYEBrhO1DqGmWDtSc5WUvD50xxkugvqc1A7peF5CYVmkgIzmklNObWwcTFBlIS4IaiK1yuRFzNkBICirhK17KmbV7txbaHEvDzNsih_nkj8H1n1ez7fQG_VHxdRyrOBA2KTJoG7iTATXhlzWfAsRgfOUSWYeRtArPsnWMKRmuTtCXWixyyAriRkXqWkDt0gdZCpYD2xLQ5u4JPU1FcipfzvZE9oEqd53xOdVUR-ElI5Oj3v5zxr"/>
+                    <div>
+                        <h2 class="font-headline-md text-[20px] leading-tight text-on-surface">Amigos de Patas</h2>
+                        <span class="text-sm text-secondary flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full bg-secondary inline-block"></span> Online
+                        </span>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <button type="button" aria-label="Ligar" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                        <span class="material-symbols-outlined">call</span>
+                    </button>
+                    <button type="button" aria-label="Videochamada" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                        <span class="material-symbols-outlined">videocam</span>
+                    </button>
+                    <button type="button" aria-label="Mais opções" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">
+                        <span class="material-symbols-outlined">more_vert</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Message History — DB: tabela mensagens -->
+            <div id="chatHistory" class="flex-1 overflow-y-auto p-lg flex flex-col gap-md bg-background/50">
+                <div class="text-center my-4">
+                    <span class="text-xs text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">Hoje</span>
+                </div>
+                <!-- Received Message -->
+                <div class="flex items-end gap-sm max-w-[80%]" data-message-id="1" data-sender="ong">
+                    <img alt="Amigos de Patas" class="h-8 w-8 rounded-full object-cover mb-1 shrink-0"
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNwQM90tRJW8DrZOTneSNZgUi3pe6q2f13_DFeYsoCMv4k5fhFIysNO3BzhFOUz8VlKUbnj-X8lU-ksOmphwPFw3bEKX38XpaeBNYceC0zKzmegAPCDfcsGryKaOrnacG43xR9hLFX1gT5CVfnRRsfTjacoJb6ZO39mEQc7e8qPxeCGZCOR16KXCPRZe7rxtNB0gKOmfeCCX5DoFIOh2eZdLy2zXbG1LvfrPsNwOQ-x-MJpCLFhDQ2Y1LTW2j-8KT3fV4YFwM9x3UJ"/>
+                    <div class="bg-surface border border-outline-variant rounded-2xl rounded-bl-sm p-4 shadow-[0_2px_8px_rgba(52,101,116,0.08)]">
+                        <p class="text-on-surface text-[15px]">Olá! Vimos seu interesse na Luna. Ela é uma gatinha muito dócil! 🐾</p>
+                        <span class="text-[11px] text-on-surface-variant mt-2 block text-right">10:42</span>
+                    </div>
+                </div>
+                <!-- Image Attachment -->
+                <div class="flex items-end gap-sm max-w-[80%] ml-10" data-message-id="2" data-sender="ong">
+                    <div class="bg-surface border border-outline-variant rounded-2xl rounded-bl-sm p-2 shadow-[0_2px_8px_rgba(52,101,116,0.08)]">
+                        <!-- DB: campo mensagem.anexo_url -->
+                        <img alt="Luna, a gatinha" class="rounded-xl w-64 h-48 object-cover"
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc36wgDFa4_J__J8ECXT7Glp_EXjkQT6kSTNzJstwrcfCiiteD7gvWoVr49RpAD9zodq3Hiwyzw6yCYv-pjfuA_VXx1R5Hx-JyoUYaOX_Aji87qRnE-4FudIfjiMCw0ZR8DRJjV73yp49GywZNPguPkzghWiHQcWUEaJ0_b1DVBj6XqMeFzGM5jFtVsbOa_uQ59V4c4NBqtm1CAcFDDoYKzIIXo2WmNaXDpNK14jX5plhNrTpsckiuWqSH1MAbTQgpyw8E-slgKReL"/>
+                        <span class="text-[11px] text-on-surface-variant mt-1 block text-right pr-2">10:43</span>
+                    </div>
+                </div>
+                <!-- Sent Message -->
+                <div class="flex items-end gap-sm max-w-[80%] self-end" data-message-id="3" data-sender="user">
+                    <div class="bg-primary text-on-primary rounded-2xl rounded-br-sm p-4 shadow-[0_4px_12px_rgba(52,101,116,0.15)]">
+                        <p class="text-[15px]">Oi! Sim, adoraria saber mais sobre o processo de adoção. Ela parece incrível! ❤️</p>
+                        <div class="flex items-center justify-end gap-1 mt-2">
+                            <span class="text-[11px] text-primary-container">10:45</span>
+                            <span class="material-symbols-outlined text-[14px] text-primary-container" data-weight="fill">done_all</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Input Area -->
+            <div class="p-md bg-surface-container-lowest border-t border-outline-variant mt-auto">
+                <form id="messageForm" data-action="messages/send" data-chat-id="1"
+                      class="flex items-end gap-sm bg-surface-container-low rounded-[24px] p-2 pr-4 border border-outline-variant/50 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+                    <button type="button" aria-label="Anexar arquivo" class="p-3 rounded-full hover:bg-surface-variant text-on-surface-variant transition-colors shrink-0">
+                        <span class="material-symbols-outlined">attach_file</span>
+                    </button>
+                    <textarea id="messageInput" name="message"
+                              class="w-full bg-transparent border-none focus:ring-0 resize-none max-h-32 py-3 px-2 text-on-surface placeholder:text-on-surface-variant/60"
+                              oninput="this.style.height = ''; this.style.height = Math.min(this.scrollHeight, 120) + 'px'"
+                              placeholder="Escreva uma mensagem..." rows="1" style="min-height: 48px;"></textarea>
+                    <button type="submit" aria-label="Enviar mensagem" class="p-3 rounded-full bg-primary text-on-primary hover:bg-primary/90 transition-colors shrink-0 shadow-sm mb-1">
+                        <span class="material-symbols-outlined" data-weight="fill">send</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="./petgran-ui.js"></script>
+</body>
+</html>
